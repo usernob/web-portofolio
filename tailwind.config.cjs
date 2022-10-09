@@ -16,8 +16,7 @@ module.exports = {
             sans: ["Poppins", "Open Sans", "Segoe UI", "ui-sans-serif","system-ui","sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"]
         },
         screens: {
-            'vs': '200px',
-            'xs': '475px',
+            'xs': '325px',
             ...defaultTheme.screens,
         },
         extend: {},
