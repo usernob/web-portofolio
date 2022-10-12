@@ -45,7 +45,7 @@ export default function Header() {
 
     return (
         <header
-            className="sticky top-0 left-0 z-20 flex w-full items-center bg-slate-900 bg-opacity-90 backdrop-blur-sm lg:fixed"
+            className="sticky top-0 left-0 z-20 flex w-full items-center bg-slate-900 bg-opacity-90 backdrop-blur-sm lg:fixed h-16 lg:h-20"
             id="header"
         >
             <div className="w-full md:container">

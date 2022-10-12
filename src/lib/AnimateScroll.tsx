@@ -49,7 +49,7 @@ const AnimateScroll = ({
     }, [getScrollPos]);
 
     const getViewportBottom = useCallback(() => {
-        return getScrollPos() + getScrollableParentHeight() / 2 + 150;
+        return getScrollPos() + getScrollableParentHeight() - 150;
     }, [getScrollPos, getScrollableParentHeight]);
 
     const isBellowViewport = useCallback(() => {
