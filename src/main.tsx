@@ -11,36 +11,25 @@ ReactDOM.createRoot(document.querySelector("#root") as HTMLElement).render(
     <main className="mx-6 md:container pb-96 overflow-x-hidden">
       <Section.Hero />
       <Section.About />
-      <div className="my-4">
-        <AnimateScroll className="bg-slate-800 m-4 rounded-lg shadow-lg border border-slate-200 p-4" offset={100}>hi</AnimateScroll>
-      </div>
-      <div className="my-4">
-        <AnimateScroll className="bg-slate-800 m-4 rounded-lg shadow-lg border border-slate-200 p-4" offset={100}>hi</AnimateScroll>
-      </div>
-      <div className="my-4">
-        <AnimateScroll className="bg-slate-800 m-4 rounded-lg shadow-lg border border-slate-200 p-4" offset={100}>hi</AnimateScroll>
-      </div>
-      <div className="my-4">
-        <AnimateScroll className="bg-slate-800 m-4 rounded-lg shadow-lg border border-slate-200 p-4" offset={100}>hi</AnimateScroll>
-      </div>
-      <div className="my-4">
-        <AnimateScroll className="bg-slate-800 m-4 rounded-lg shadow-lg border border-slate-200 p-4" offset={100}>hi</AnimateScroll>
-      </div>
-      <div className="my-4">
-        <AnimateScroll className="bg-slate-800 m-4 rounded-lg shadow-lg border border-slate-200 p-4" offset={100}>hi</AnimateScroll>
-      </div>
-      <div className="my-4">
-        <AnimateScroll className="bg-slate-800 m-4 rounded-lg shadow-lg border border-slate-200 p-4" offset={100}>hi</AnimateScroll>
-      </div>
-      <div className="my-4">
-        <AnimateScroll className="bg-slate-800 m-4 rounded-lg shadow-lg border border-slate-200 p-4" offset={100}>hi</AnimateScroll>
-      </div>
-      <div className="my-4">
-        <AnimateScroll className="bg-slate-800 m-4 rounded-lg shadow-lg border border-slate-200 p-4" offset={100}>hi</AnimateScroll>
-      </div>
-      <div className="my-4">
-        <AnimateScroll className="bg-slate-800 m-4 rounded-lg shadow-lg border border-slate-200 p-4" offset={100}>hi</AnimateScroll>
-      </div>
+      {["about", "work", "experience", "contact"].map((section, index) => {
+        let value: number = 1000;
+        return (
+          <div className="my-4" key={index}>
+            <AnimateScroll
+              className="bg-slate-800 m-4 rounded-lg shadow-lg border border-slate-200 p-4"
+              offset={100}
+              translate={{
+                startX: index % 2 == 0 ? -value : value,
+                startY: 0,
+                endX: index % 2 == 0 ? value : -value,
+                endY: 0,
+              }}
+            >
+              {section}
+            </AnimateScroll>
+          </div>
+        );
+      })}
       <Section.About />
     </main>
     <Comp.Footer />
